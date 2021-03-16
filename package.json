@@ -1,15 +1,32 @@
 {
-  "name": "LogExemple",
+  "name": "application-log-exemple",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    
+    "sequelize:main:migrate": "sequelize --options-path ./sequelize/main/.sequelizerc db:migrate",
+    "sequelize:main:migration:create": "sequelize --options-path ./sequelize/main/.sequelizerc migration:create",
+    "sequelize:main:migrate:undo": "sequelize --options-path ./sequelize/main/.sequelizerc db:migrate:undo",
+    "sequelize:main:seed:all": "sequelize --options-path ./sequelize/main/.sequelizerc db:seed:all",
+    
+    "sequelize:log:migrate": "sequelize --options-path ./sequelize/log/.sequelizerc db:migrate",
+    "sequelize:log:migration:create": "sequelize --options-path ./sequelize/log/.sequelizerc migration:create",
+    "sequelize:log:migrate:undo": "sequelize --options-path ./sequelize/log/.sequelizerc db:migrate:undo",
+    "sequelize:log:seed:all": "sequelize --options-path ./sequelize/log/.sequelizerc db:seed:all"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "sequelize": "^6.5.1"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "sequelize": "^6.5.1",
+    "sequelize-msnodesqlv8": "^0.2.6-beta.8",
+    "sqlite3": "^5.0.2",
+    "tedious": "^11.0.6"
   }
 }
